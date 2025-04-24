@@ -10,8 +10,7 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem,
-  Chip
+  MenuItem
 } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 

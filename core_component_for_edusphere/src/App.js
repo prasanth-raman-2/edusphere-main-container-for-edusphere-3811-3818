@@ -1,9 +1,6 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, CssBaseline, CircularProgress, Box } from '@mui/material';
-import ErrorBoundary from './components/common/ErrorBoundary';
-import theme from './theme';
-import GlobalStyles from './styles/globalStyles';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { CircularProgress, Box } from '@mui/material';
 
 // Layout
 import DashboardLayout from './components/layout/DashboardLayout';
@@ -128,13 +125,8 @@ const Assessments = () => (
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <GlobalStyles />
-        <Router>
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
+    <Suspense fallback={<LoadingFallback />}>
+      <Routes>
           {/* Public Route */}
           <Route path="/" element={<Landing />} />
           
@@ -173,11 +165,8 @@ function App() {
           
           {/* Fallback Route */}
           <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-        </Suspense>
-      </Router>
-      </ThemeProvider>
-    </ErrorBoundary>
+      </Routes>
+    </Suspense>
   );
 }
 

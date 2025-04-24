@@ -1,9 +1,8 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Box, Avatar } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Box, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { useNavigate } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -11,15 +10,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
-const NavButton = styled(Button)(({ theme }) => ({
-  marginLeft: theme.spacing(2),
-  '&:hover': {
-    backgroundColor: theme.palette.primary.light,
-  },
-}));
-
 const Navigation = ({ onMenuClick }) => {
-  const navigate = useNavigate();
 
   return (
     <StyledAppBar position="fixed">

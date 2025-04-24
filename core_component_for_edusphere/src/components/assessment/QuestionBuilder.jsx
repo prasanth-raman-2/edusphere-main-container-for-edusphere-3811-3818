@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, TextField, Select, MenuItem, Button, Typography, Card, CardContent } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import QuestionTypes from './QuestionTypes';
+
 
 const QUESTION_TYPE_OPTIONS = [
   { value: 'multiple_choice', label: 'Multiple Choice' },
