@@ -18,6 +18,17 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     boxSizing: 'border-box',
     backgroundColor: theme.palette.background.paper,
     borderRight: `1px solid ${theme.palette.divider}`,
+    paddingTop: 0,
+    marginTop: theme.spacing(8), // 64px, consistent with AppBar height
+    height: `calc(100% - ${theme.spacing(8)})`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    [theme.breakpoints.up('lg')]: {
+      borderRight: `1px solid ${theme.palette.divider}`,
+      boxShadow: theme.shadows[1],
+    },
   },
 }));
 
@@ -38,8 +49,8 @@ const Sidebar = ({ open, onClose }) => {
       open={open}
       onClose={onClose}
     >
-      <Box sx={{ p: 3 }}>
-        <Typography variant="h6" color="primary" sx={{ fontWeight: 600 }}>
+      <Box sx={{ p: 2.5, borderBottom: 1, borderColor: 'divider' }}>
+        <Typography variant="h6" color="primary" sx={{ fontWeight: 600, ml: 1 }}>
           EduSphere
         </Typography>
       </Box>
@@ -51,6 +62,8 @@ const Sidebar = ({ open, onClose }) => {
             key={item.text}
             onClick={() => navigate(item.path)}
             sx={{
+              py: 1.5,
+              px: 2.5,
               '&:hover': {
                 backgroundColor: 'primary.light',
                 '& .MuiListItemIcon-root': {

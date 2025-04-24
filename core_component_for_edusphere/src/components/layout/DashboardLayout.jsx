@@ -8,11 +8,35 @@ const DrawerWidth = 240;
 
 const Main = styled('main')(({ theme }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
-  marginLeft: DrawerWidth,
-  marginTop: 64,
   backgroundColor: theme.palette.background.default,
-  minHeight: '100vh',
+  minHeight: 'calc(100vh - 64px)',
+  maxWidth: '1600px',
+  marginTop: theme.spacing(8), // 64px, consistent with AppBar height
+  padding: theme.spacing(2),
+  transition: theme.transitions.create(['margin', 'width', 'padding'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  [theme.breakpoints.up('xs')]: {
+    width: `calc(100% - ${DrawerWidth}px)`,
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+  },
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(100% - ${DrawerWidth}px)`,
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+  },
+  [theme.breakpoints.up('md')]: {
+    width: `calc(100% - ${DrawerWidth}px)`,
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: `calc(100% - ${DrawerWidth}px)`,
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
+  },
 }));
 
 const DashboardLayout = ({ children }) => {
