@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, CssBaseline, CircularProgress, Box } from '@mui/material';
-import ErrorBoundary from './components/common/ErrorBoundary';
+import { ThemeProvider, CssBaseline, CircuarProgress, Box } from '@mui/material';
+// import ErrorBoundary from './components/common/ErrorBoundary';
 import theme from './theme';
 import GlobalStyles from './styles/globalStyles';
 
@@ -54,7 +54,7 @@ const LoadingFallback = () => (
       minHeight: '100vh'
     }}
   >
-    <CircularProgress />
+    <CircuarProgress />
   </Box>
 );
 
@@ -128,7 +128,7 @@ const Assessments = () => (
 
 function App() {
   return (
-    <ErrorBoundary>
+    // <ErrorBoundary>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <GlobalStyles />
@@ -177,7 +177,7 @@ function App() {
         </Suspense>
       </Router>
       </ThemeProvider>
-    </ErrorBoundary>
+    // </ErrorBoundary>
   );
 }
 
